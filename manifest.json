@@ -1,0 +1,26 @@
+{
+	"manifest_version": 2,
+
+	"name": "Language Reader",
+	"description": "Helping you remember words in other languages.",
+	"version": "0.1",
+
+	"permissions": [
+		"tabs",
+		"storage",
+		"unlimitedStorage"
+	],
+	"browser_action": {
+		"default_icon": "icon1.png",
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"scripts": [ "background.js" ]
+	},
+	"content_scripts": [
+		{
+			"matches": [ "http://*/*" ],
+			"js": [ "jquery-2.0.3.min.js", "findAndReplaceDOMText.js", "content.js" ]
+		}
+	]
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<title>Language Reader Popup</title>
+	<style>
+		body {
+			min-width: 768px;
+			overflow-x: hidden;
+		}
+		.clearer { clear: both; }
+		.left { float: left; }
+		.right { float: right; }
+		.textRight { text-align: right; }
+	</style>
+
+    <!-- Note: JavaScript and HTML must be in separate files: see the Content Security Policy: http://developer.chrome.com/extensions/contentSecurityPolicy.html -->
+	<script src="jquery-2.0.3.min.js"></script>
+	<script src="popup.js"></script>
+</head>
+<body>
+	<div class="left" style="min-width:300px">
+		<div class="textRight">
+			<label for="newWordInput">Word: </label>
+			<input type="text" id="newWordInput"></input>
+		</div>
+		<div class="textRight">
+			<label for="newWordDefinition">Definition: </label>
+			<input type="text" id="newWordDefinition"></input>
+		</div>
+		<button id="addWordButton">Add New Word</button>
+		<div>Recorded Words:</div>
+		<div id="currentWords"></div>
+	</div>
+	<div class="right" style="min-width:450px">
+		<button id="trackButton">Track This Domain</button>
+		<div>Currently Tracking:</div>
+		<div id="currentlyTracking"></div>
+	</div>
+	<div class="clearer"></div>
+</body>
+</html>
