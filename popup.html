@@ -19,15 +19,24 @@
 </head>
 <body>
 	<div class="left" style="min-width:300px">
-		<div class="textRight">
-			<label for="newWordInput">Word: </label>
-			<input type="text" id="newWordInput"></input>
-		</div>
-		<div class="textRight">
-			<label for="newWordDefinition">Definition: </label>
-			<input type="text" id="newWordDefinition"></input>
-		</div>
-		<button id="addWordButton">Add New Word</button>
+		<form>
+			<div class="textRight">
+				<label for="newWordInput">Word: </label>
+				<input type="text" id="newWordInput"></input>
+			</div>
+			<div class="textRight">
+				<label for="newWordRomanization">Romanization: </label>
+				<input type="text" id="newWordRomanization"></input>
+			</div>
+			<div class="textRight">
+				<label for="newWordDefinition">Definition: </label>
+				<input type="text" id="newWordDefinition"></input>
+			</div>
+			<div class="textRight">
+				<!--<button id="addWordButton">Add New Word</button>-->
+				<input type="submit" id="addWordButton" value="Add New Word" />
+			</div>
+		</form>
 		<div>Recorded Words:</div>
 		<div id="currentWords"></div>
 	</div>

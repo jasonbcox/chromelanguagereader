@@ -16,10 +16,10 @@ chrome.extension.onMessage.addListener( function ( request, sender, sendResponse
 	if ( request.action == "istracked" ) {
 		var domains = [];
 		var isTracked = false;
-		chrome.storage.local.get( 'domains', function (items) {
+		chrome.storage.local.get( 'domains', function ( items ) {
 			if ( items instanceof Array ) domains = items;
 			isTracked = domainIsTracked( request.domain, domains );
-			chrome.storage.local.get( 'words', function (words) {
+			chrome.storage.local.get( 'words', function ( words ) {
 				chrome.tabs.getSelected( null, function ( tab ) {
 					chrome.tabs.sendMessage( tab.id, { action: 'activate', data: words } );
 				} );
@@ -32,3 +32,4 @@ chrome.extension.onMessage.addListener( function ( request, sender, sendResponse
 		sendResponse({});
 	}
 } );
+

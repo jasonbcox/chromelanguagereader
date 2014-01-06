@@ -54,8 +54,9 @@ function fillWordList() {
 	list.empty();
 	for ( var i = 0; i < words.length; i++ ) {
 		var word = words[i].word;
-		var definition = words[i].def;
-		var newWordElements = $( '<div><span>' + word + '</span><span> - </span><span>' + definition + '</span>' );
+		var romanization = words[i].romanization;
+		var definition = words[i].definition;
+		var newWordElements = $( '<div><span>' + word + '</span><span> (' + romanization + ') </span><span>' + definition + '</span>' );
 		var newRemoveButton = $( '<button class="removeWordButton right">X</button></div><div class="clearer"></div>' );
 		list.append( newWordElements );
 		//list.append( newRemoveButton );
@@ -81,9 +82,10 @@ function addTracking() {
 // Button press to add a new word to the word list
 function addWord() {
 	var thisWord = $( '#newWordInput' ).val();
-	var thisDef = $( '#newWordDefinition' ).val();
+	var thisRomanization = $( '#newWordRomanization' ).val();
+	var thisDefinition = $( '#newWordDefinition' ).val();
 	if ( ( thisWord != null ) && ( thisWord.length > 0 ) ) {
-		var entry = { word: thisWord, def: thisDef };
+		var entry = { word: thisWord, romanization: thisRomanization, definition: thisDefinition };
 		var found = false;
 		for ( var i = 0; i < words.length; i++ ) {
 			if ( words[i].word == thisWord ) {
@@ -130,3 +132,4 @@ $(document).ready( function() {
 		} );
 	} );
 });
+
