@@ -70,8 +70,8 @@ $( document ).ready( function () {
 	// Define custom css
 	$( '<style type="text/css"> .' + spanClass + ' { background: #fee; position: relative; } </style>' ).appendTo( "head" );
 	$( '<style type="text/css"> .' + windowClass + ' { background: #fff; position: absolute; min-width: 128px; min-height: 48px; border-radius: 7px; border: 1px solid #888; padding: 3px; } </style>' ).appendTo( "head" );
-	$( '<style type="text/css"> .' + wordClass + ' { font-size: 20px; } </style>' ).appendTo( "head" );
-	$( '<style type="text/css"> .' + romanizationClass + ' { margin-left: 5px; } </style>' ).appendTo( "head" );
+	$( '<style type="text/css"> .' + wordClass + ' { font-size: 20px; font-weight: bold; } </style>' ).appendTo( "head" );
+	$( '<style type="text/css"> .' + romanizationClass + ' { margin-left: 5px; text-decoration: underline } </style>' ).appendTo( "head" );
 	$( '<style type="text/css"> .' + definitionClass + ' { margin-left: 5px; } </style>' ).appendTo( "head" );
 
 	// Define plugin javascript window
