@@ -20,7 +20,8 @@
 	"content_scripts": [
 		{
 			"matches": [ "http://*/*" ],
-			"js": [ "jquery-2.0.3.min.js", "findAndReplaceDOMText.js", "content.js" ]
+			"js": [ "jquery-2.0.3.min.js", "findAndReplaceDOMText.js", "content.js" ],
+			"css": [ "content.css" ]
 		}
 	]
 }

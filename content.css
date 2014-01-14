@@ -1,0 +1,32 @@
+
+.clre-hidden { display: none; }
+
+.clre-plugin-span {
+	background: #fee;
+	position: relative;
+}
+
+.clre-plugin-window {
+	background: #fff;
+	position: absolute;
+	min-width: 128px;
+	min-height: 48px;
+	border-radius: 7px;
+	border: 1px solid #888;
+	padding: 3px;
+}
+
+.clre-plugin-word {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.clre-plugin-romanization {
+	margin-left: 5px;
+	text-decoration: underline
+}
+
+.clre-plugin-definition {
+	margin-left: 5px;
+}
+
