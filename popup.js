@@ -69,8 +69,7 @@ function fillWordList() {
 
 // Button press to add the current domain to the tracking list
 function addTracking() {
-	thisDomain = prompt( "Add the new domain to track:", thisDomain );
-
+	var thisDomain = $( '#newDomainInput' ).val();
 	if ( ( thisDomain != null ) && ( thisDomain.length > 0 ) ) {
 		if ( $.inArray( thisDomain, domains ) == -1 ) domains.push( thisDomain );
 		chrome.storage.local.set( { 'domains': domains }, function () {
@@ -102,10 +101,7 @@ function addWord() {
 
 $(document).ready( function() {
 	chrome.tabs.query( {active: true}, function( tab ) {
-		thisDomain = tab[0].url;
-		var i = thisDomain.indexOf( '/', 8 );
-		if ( i != -1 ) thisDomain = thisDomain.substr( 0, i );
-		thisDomain += '/*';
+		$( '#newDomainInput' ).val( tab[0].url );
 
 		// To implement multi-language support, consider the following:
 		//	var obj = {};
@@ -126,7 +122,6 @@ $(document).ready( function() {
 	chrome.storage.local.get( 'domains', function ( local ) {
 		if ( local.domains instanceof Array ) domains = local.domains;
 		fillTrackingList();
-
 		$( '#trackButton' ).click( function () {
 			addTracking();
 		} );
